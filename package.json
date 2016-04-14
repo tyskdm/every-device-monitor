@@ -1,0 +1,44 @@
+{
+  "name": "every-device-monitor",
+  "version": "0.4.0",
+  "private": true,
+  "description": "EverySensse device-date logger and device-health monitor.",
+  "main": "src/main.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "clean": "grunt --no-color clean",
+    "local-test": "grunt --no-color local-test",
+    "test": "grunt --no-color",
+    "build": "grunt --no-color build",
+    "compiler": "java -jar /usr/local/closure-compiler/compiler.jar",
+    "nml": "nml",
+    "grunt": "grunt --no-color",
+    "rajah": "rajah"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:tyskdm/gas-sheetdb.git"
+  },
+  "keywords": [
+    "gas",
+    "Google Apps Script",
+    "spreadsheet"
+  ],
+  "author": "Tsuyoshi Kodama",
+  "license": "MIT",
+  "dependencies": {
+    "gas-sheetdb": "file:../gas-sheetdb"
+  },
+  "devDependencies": {
+    "gas-manager": "^0.4.3",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-shell": "^1.2.1",
+    "node-module-linker": "^0.9.1",
+    "rajah": "^2.0.2"
+  }
+}

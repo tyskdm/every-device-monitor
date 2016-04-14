@@ -1,0 +1,41 @@
+{
+    "test-bench": {
+        "credential":   "../.gas-manager/gmail.com.json",
+        "fileId":       "1K-MJKCrS8deGjJPHPm2met3MGBjp7NEYFenI-4e126dWgWZ66eYMqCdd",
+        "filename":     "Code",
+        "dogetUrl":     "https://script.google.com/macros/s/AKfycbykYLsVNUaIfLDuB9oW99CH-rOA_OQOqX-76g0JdnhA/dev",
+        "dogetCookie":  "../.gas-manager/cookies.txt"
+    },
+
+    "test-spreadsheet": {
+        "fileId":       "1lRPhUQhod3V_RuuiFPAhn9d7aqVCht0aNuZ_GZYawjw",
+        "dogetUrl":     "",
+        "dogetCookie":  "../.gas-manager/cookies.txt"
+    },
+
+    "package-test-target": {
+        "credential":   "../.gas-manager/gmail.com.json",
+        "fileId":       "1qbzXIrpqM0cpVkHISBJeCRjKekM_2KUkFjKmbNqZDeDgar9RgkTDKGfZ",
+        "filename":     "Code"
+    },
+
+    "package-test-spreadsheet": {
+        "fileId":       "1SnHq89V1VzbxWydLF5PCvTGlQNkY2dQJLxQvrNUYTyA",
+        "dogetUrl":     "https://script.google.com/macros/s/AKfycbxI1ICjhi1bTr_pZkUcXzHOP2kVG9zGF-I4F1BTQ-w/dev",
+        "dogetCookie":  "../.gas-manager/cookies.txt"
+    },
+
+    "package-test-spec": {
+        "credential":   "../.gas-manager/gmail.com.json",
+        "fileId":       "1K-MJKCrS8deGjJPHPm2met3MGBjp7NEYFenI-4e126dWgWZ66eYMqCdd",
+        "filename":     "Code",
+        "dogetUrl":     "https://script.google.com/macros/s/AKfycbykYLsVNUaIfLDuB9oW99CH-rOA_OQOqX-76g0JdnhA/dev",
+        "dogetCookie":  "../.gas-manager/cookies.txt"
+    },
+
+    "package-deploy": {
+        "credential":   "../.gas-manager/gmail.com.json",
+        "fileId":       "1S7dD-P0Fnu9iyASm-NpDM6dDhwRo8VmHkdPqVAlkr-P3j67x5VsAq5o2",
+        "filename":     "Code"
+    }
+}

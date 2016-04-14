@@ -1,0 +1,38 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": "noFunc",
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+
+  "predef": [
+    "jasmine",
+    "describe",
+    "it",
+    "xit",
+    "beforeEach",
+    "afterEach",
+    "setFixtures",
+    "loadFixtures",
+    "spyOn",
+    "expect",
+    "runs",
+    "waitsFor",
+    "waits"
+  ],
+  
+  "globals": {
+    // Google apps services.
+    "Browser":        true,
+    "CacheService":   true,
+    "ScriptApp":      true,
+    "SpreadsheetApp": true,
+    "UrlFetchApp":    true
+  }
+}
