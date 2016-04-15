@@ -38,12 +38,13 @@ function getDeviceData(device_uuid, opt) {
 function getSessionKey() {
   
   var sessionkey,
-      cache = CacheService.getUserCache();
+      up = PropertiesService.getUserProperties();
+      //cache = CacheService.getUserCache();
 
-  sessionkey = cache.get("Session-Key");
+  sessionkey = up.getProperty("Session-Key");
+  //sessionkey = cache.get("Session-Key");
 
   if (sessionkey === null) {
-    Browser.msgBox('cache : null');
     sessionkey = createSessionKey();
   }
 
@@ -53,8 +54,11 @@ function getSessionKey() {
 
 function saveSessionKey(sessionkey) {
   if (sessionkey !== null) {
-    var cache = CacheService.getUserCache();
-    cache.put("Session-Key", sessionkey, 518400);     // cache for 6 days. EverySense Session key is effective for 7 days.
+    var up = PropertiesService.getUserProperties();
+    //var cache = CacheService.getUserCache();
+
+    up.setProperty("Session-Key", sessionkey);
+    //cache.put("Session-Key", sessionkey, 518400);     // cache for 6 days. EverySense Session key is effective for 7 days.
   }
 }
 
