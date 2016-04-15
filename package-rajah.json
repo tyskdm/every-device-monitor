@@ -2,6 +2,7 @@
   "files": [
     "package.json",
     "gas.json",
-    "src"
+    "src",
+    "test/spec/.sessionkey-info.json"
   ]
 }
