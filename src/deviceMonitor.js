@@ -1,18 +1,58 @@
 
 
-var sheetdb = require('gas-sheetdb'),
-    server = require('./server');
+
+var BASE_URL = 'https://api.every-sense.com:8001';
 
 
+
+function getDeviceData_(device_uuid, server, sessionkey) {
+
+  var data, key = sessionkey.get();
+
+  if (key !== null) {
+    data = server.getDeviceData(device_uuid, key);
+    if (data.code !== undefined) {    // Error
+      switch (data.code) {
+        case -2:    // Authentication Error
+          sessionkey.set(null);
+          break;
+        default:
+          
+      }
+    } 
+  }
+
+
+
+  if (key === null) {   // sessionkey not exist
+    // Create session
+    var login_name, password;
+
+    sessionkey.create_session(login_name, password);    
+  }
+
+
+
+}
 
 function setUpSpreadsheet() {
 
-  var deviceInfo = sheetdb.getTable('DeviceInfo'),
+  var sheetdb = require('gas-sheetdb'),
+      sessionkey = require('./SessionKey'),
+      server = require('./server');
+
+  var device_UUID, data, key,
+      deviceInfo = sheetdb.getTable('DeviceInfo'),
       dataHeader = sheetdb.getTable('DataHeader');
 
-  var device_UUID = deviceInfo.getValue(/* 'device_UUID' */ 1, 1),
-      data = server.getDeviceData(device_UUID);
-      data = data[data.length - 1];                      // pick up latest one.
+  server.init(BASE_URL);
+  sessionkey = new sessionkey(BASE_URL);
+
+  device_UUID = deviceInfo.getValue(/* 'device_UUID' */ 1, 1);
+
+  // Error Handling
+  
+  data = data[data.length - 1];                      // pick up latest one.
 
   var i, j, p, s, col = 1;
   for (i = 0; i < data.length; i++) {
