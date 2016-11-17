@@ -38,7 +38,7 @@ function getDeviceData_(device_uuid, server, sessionkey) {
 function setUpSpreadsheet() {
 
   var sheetdb = require('gas-sheetdb'),
-      sessionkey = require('./SessionKey'),
+      sessionkey, SessionKey = require('./SessionKey'),
       server = require('./server');
 
   var device_UUID, data, key,
@@ -46,7 +46,7 @@ function setUpSpreadsheet() {
       dataHeader = sheetdb.getTable('DataHeader');
 
   server.init(BASE_URL);
-  sessionkey = new sessionkey(BASE_URL);
+  sessionkey = new SessionKey(BASE_URL);
 
   device_UUID = deviceInfo.getValue(/* 'device_UUID' */ 1, 1);
 
@@ -90,6 +90,9 @@ function manualUpdate() {
 
 function updateStatus() {
   
+  var sheetdb = require('gas-sheetdb'),
+      server = require('./server');
+
   var deviceInfo = sheetdb.getTable('DeviceInfo'),
       deviceData = sheetdb.getTable('DeviceData');
 
@@ -164,6 +167,7 @@ function updateStatus() {
 function logOff() {
 
   // Set spreadsheet status messages
+  var server = require('./server');
 
   server.deleteSessionKey();
 }
