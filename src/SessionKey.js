@@ -1,6 +1,8 @@
 'use_strict';
 
-var assert = require('./assert');
+var PropertiesService = require('PropertiesService'),
+    UrlFetchApp = require('UrlFetchApp'),
+    assert = require('./assert');
 
 
 function SessionKey(baseUrl) {

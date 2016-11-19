@@ -1,8 +1,9 @@
+'use_strict';
 
 
-
-var BASE_URL = 'https://api.every-sense.com:8001';
-
+var BASE_URL = 'https://api.every-sense.com:8001',
+    SpreadsheetApp = require('SpreadsheetApp'),
+    Browser = require('Browser');
 
 
 function getDeviceData_(device_uuid, server, sessionkey) {

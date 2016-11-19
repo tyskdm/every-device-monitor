@@ -1,7 +1,8 @@
 'use_strict';
 
 var BASE_URL,
-    assert = require('./assert');
+    assert = require('./assert'),
+    UrlFetchApp = require('UrlFetchApp');
 
 function init(base_url) {
     BASE_URL = base_url;

@@ -1,3 +1,9 @@
+'use_strict';
+
+var SpreadsheetApp = require('SpreadsheetApp'),
+    ScriptApp = require('ScriptApp'),
+    Browser = require('Browser');
+
 
 function init(global) {
   global.func0001 = require('./deviceMonitor').setUpSpreadsheet;

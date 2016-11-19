@@ -25,15 +25,5 @@
     "runs",
     "waitsFor",
     "waits"
-  ],
-  
-  "globals": {
-    // Google apps services.
-    "Browser":            true,
-    "CacheService":       true,
-    "PropertiesService":  true,
-    "ScriptApp":          true,
-    "SpreadsheetApp":     true,
-    "UrlFetchApp":        true
-  }
+  ]
 }
