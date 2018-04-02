@@ -84,13 +84,17 @@ module.exports = function(grunt) {
 
       'gas-wget': {
         command: function (target, filepath, options) {
-          return 'wget' +
-                 ' "' + this.config.get('gas')[target].dogetUrl + (options ? options : '') + '"' +
-                 ' --load-cookies=' + this.config.get('gas')[target].dogetCookie +
-                 ' -O ' + filepath;
+          // return 'wget' +
+          //        ' "' + this.config.get('gas')[target].dogetUrl + (options ? options : '') + '"' +
+          //        ' --load-cookies=' + this.config.get('gas')[target].dogetCookie +
+          //        ' -O ' + filepath;
+          return 'w3m' +
+                 ' -dump' +
+                 ' ' + this.config.get('gas')[target].dogetUrl + (options ? options : '') +
+                 ' | tee ' + filepath;
         },
         options: {
-          stdout: false,
+          stdout: true,
           failOnError: true
         }
       }
